@@ -50,6 +50,8 @@ spec:
                 secretKeyRef:
                   name: chatbot-ui
                   key: OPENAI_API_KEY
+      imagePullSecrets:
+        - name: regcred
 
 ---
 

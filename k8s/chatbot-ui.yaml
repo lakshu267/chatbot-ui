@@ -1,22 +1,13 @@
-# Namespace
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: chatbot-ui
-
----
-
 # Secret for API Key
 apiVersion: v1
 kind: Secret
 metadata:
   name: chatbot-ui
-  namespace: chatbot-ui
 type: Opaque
 data:
   OPENAI_API_KEY: c2stcHJvai1WSFlTYS1kQWVBcnYzUTh4blpxVThPTzJTdGpQaklhYnlDU3FTYVlWQk5IdTdfcFNS
 Uml4X0NXek01TDJ6a2ljQ18td3FZZ1UyRlQzQmxia0ZKSUtrcWVSUHFabkZLcXlUV3R3cHUzMmVD
-TnFWa2FsR1ppWTlVR2RLR0h0bmRaYmlEQTZ6eEhQSE9pUTZLX3lpZW5QUGhhcVVaOEE=  # Replace this with your base64-encoded API key
+TnFWa2FsR1ppWTlVR2RLR0h0bmRaYmlEQTZ6eEhQSE9pUTZLX3lpZW5QUGhhcVVaOEE=
 
 ---
 
@@ -24,7 +15,6 @@ TnFWa2FsR1ppWTlVR2RLR0h0bmRaYmlEQTZ6eEhQSE9pUTZLX3lpZW5QUGhhcVVaOEE=  # Replace 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: chatbot-ui
   name: chatbot-ui
   labels:
     app: chatbot-ui
@@ -59,7 +49,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: chatbot-ui
   name: chatbot-ui
   labels:
     app: chatbot-ui
